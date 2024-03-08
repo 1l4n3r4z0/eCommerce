@@ -1,40 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados del Checklist</title>
+    <title>Resultados del UX Checklist</title>
 </head>
 <body>
-    <h2>Resultados del Checklist</h2>
-    <div id="score"></div>
-    <div id="suggestions"></div>
-
-    <script>
-        function calcularPuntajeYSugerencias() {
-            var queryParams = new URLSearchParams(window.location.search);
-            var total = queryParams.getAll('checkbox').length;
-            var marcados = queryParams.getAll('checkbox').filter(Boolean).length;
-
-            var porcentaje = total > 0 ? (marcados / total) * 100 : 0;
-            var score = "Puntaje: " + porcentaje.toFixed(2) + "%";
-            var suggestions = "Sugerencias de mejora: ";
-
-            if (porcentaje >= 80) {
-                suggestions += "El prototipo tiene una alta usabilidad y experiencia de usuario. ¡Excelente trabajo!";
-            } else if (porcentaje >= 60) {
-                suggestions += "Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario.";
-            } else {
-                suggestions += "Es importante mejorar varios aspectos relacionados con la usabilidad y experiencia de usuario.";
-            }
-
-            document.getElementById('score').innerText = score;
-            document.getElementById('suggestions').innerText = suggestions;
-        }
-
-        window.onload = function() {
-            calcularPuntajeYSugerencias();
-        };
-    </script>
+    <h1>Resultados del UX Checklist</h1>
+    <p>Basado en tus respuestas, el puntaje obtenido es:</p>
+    <?php
+        $score = 0;
+        if ($_POST['checklist_item_1'] == 'SI') $score++;
+        if ($_POST['checklist_item_2'] == 'SI') $score++;
+        if ($_POST['checklist_item_3'] == 'SI') $score++;
+        // Añade más condiciones según la cantidad de elementos en el checklist
+        echo "<p>Puntaje: $score</p>";
+    ?>
 </body>
 </html>
