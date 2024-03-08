@@ -1,95 +1,20 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist Interactivo</title>
+    <title>UX Checklist</title>
 </head>
 <body>
-    <h2>Checklist Interactivo</h2>
-    <div class="checklist">
- <!-- Inicio del Checklist -->
- <div class="checklist">
-        <!-- Navegación -->
-        <div class="category">Navegación</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="nav1"> Es fácil encontrar y acceder a las diferentes secciones del prototipo?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="nav2"> La navegación es clara y directa?</label>
-        </div>
-
-        <!-- Diseño -->
-        <div class="category">Diseño</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="design1"> Los colores y la tipografía utilizados son agradables y legibles?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="design2"> El diseño general es ordenado y profesional?</label>
-        </div>
-
-        <!-- Usabilidad -->
-        <div class="category">Usabilidad</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="usability1"> Se puede completar fácilmente las tareas principales del prototipo?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="usability2"> Los botones y enlaces son claros y fáciles de entender?</label>
-        </div>
-
-        <!-- Interactividad -->
-        <div class="category">Interactividad</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="interaction1"> Los elementos interactivos, como botones y menús, funcionan correctamente?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="interaction2"> La interacción con el prototipo es intuitiva para el usuario?</label>
-        </div>
-
-        <!-- Feedback del Usuario -->
-        <div class="category">Feedback del Usuario</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="feedback1"> Los usuarios pueden proporcionar comentarios sobre su experiencia con el prototipo?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="feedback2"> Se han tenido en cuenta los comentarios de los usuarios para realizar mejoras en el diseño?</label>
-        </div>
-
-        <!-- Objetivos del Negocio -->
-        <div class="category">Objetivos del Negocio</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="business1"> El prototipo cumple con los objetivos y requisitos comerciales establecidos?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="business2"> Es claro cómo el prototipo puede beneficiar al negocio?</label>
-        </div>
-
-        <!-- Compatibilidad y Desempeño -->
-        <div class="category">Compatibilidad y Desempeño</div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="compatibility1"> El prototipo se visualiza correctamente en diferentes dispositivos y navegadores?</label>
-        </div>
-        <div class="checklist-item">
-            <label><input type="checkbox" id="compatibility2"> El prototipo carga rápidamente y sin problemas?</label>
-        </div>
-    </div>
-    <!-- Fin del Checklist -->
- <button onclick="redirectToResults()">Ver Resultados</button>
-
-    <script>
-        function redirectToResults() {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            var selectedValues = [];
-
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    selectedValues.push(checkbox.id);
-                }
-            });
-
-            var queryParams = selectedValues.join("&");
-            window.location.href = "results.html?" + queryParams;
-        }
-    </script>
+    <h1>UX Checklist</h1>
+    <form action="results.html" method="post">
+        <ol>
+            <li><input type="checkbox" name="checklist_item_1" value="SI"> ¿El diseño es intuitivo?</li>
+            <li><input type="checkbox" name="checklist_item_2" value="SI"> ¿La navegación es clara?</li>
+            <li><input type="checkbox" name="checklist_item_3" value="SI"> ¿La carga de la página es rápida?</li>
+            <!-- Agrega más elementos del checklist aquí -->
+        </ol>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
