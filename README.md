@@ -1,4 +1,4 @@
-# Proyecto Académico: Resultados del UX Checklist
+# Proyecto Académico: UX Checklist
 
 Este proyecto académico se centra en la evaluación de la usabilidad y la experiencia de usuario (UX) de un prototipo a través de un checklist. El checklist utilizado cuenta con 14 ítems que abarcan diferentes aspectos del diseño y la interacción del prototipo.
 
