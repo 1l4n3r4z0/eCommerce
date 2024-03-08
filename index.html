@@ -1,40 +1,14 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checklist Interactivo</title>
-    <style>
-        /* Estilos CSS */
-        .checklist-item {
-            margin-bottom: 10px;
-        }
-        .checklist-item label {
-            display: block;
-        }
-        .checklist-item input[type="checkbox"] {
-            margin-right: 10px;
-        }
-        .category {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .bottom-space {
-            margin-bottom: 40px;
-        }
-        #score {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        #suggestions {
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
     <h2>Checklist Interactivo</h2>
     <div class="checklist">
+ <div class="checklist">
         <!-- Navegación -->
         <div class="category">Navegación</div>
         <div class="checklist-item">
@@ -43,7 +17,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="nav2"> La navegación es clara y directa?</label>
         </div>
-        
+
         <!-- Diseño -->
         <div class="category">Diseño</div>
         <div class="checklist-item">
@@ -52,7 +26,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="design2"> El diseño general es ordenado y profesional?</label>
         </div>
-        
+
         <!-- Usabilidad -->
         <div class="category">Usabilidad</div>
         <div class="checklist-item">
@@ -61,7 +35,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="usability2"> Los botones y enlaces son claros y fáciles de entender?</label>
         </div>
-        
+
         <!-- Interactividad -->
         <div class="category">Interactividad</div>
         <div class="checklist-item">
@@ -70,7 +44,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="interaction2"> La interacción con el prototipo es intuitiva para el usuario?</label>
         </div>
-        
+
         <!-- Feedback del Usuario -->
         <div class="category">Feedback del Usuario</div>
         <div class="checklist-item">
@@ -79,7 +53,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="feedback2"> Se han tenido en cuenta los comentarios de los usuarios para realizar mejoras en el diseño?</label>
         </div>
-        
+
         <!-- Objetivos del Negocio -->
         <div class="category">Objetivos del Negocio</div>
         <div class="checklist-item">
@@ -88,7 +62,7 @@
         <div class="checklist-item">
             <label><input type="checkbox" id="business2"> Es claro cómo el prototipo puede beneficiar al negocio?</label>
         </div>
-        
+
         <!-- Compatibilidad y Desempeño -->
         <div class="category">Compatibilidad y Desempeño</div>
         <div class="checklist-item">
@@ -98,40 +72,13 @@
             <label><input type="checkbox" id="compatibility2"> El prototipo carga rápidamente y sin problemas?</label>
         </div>
     </div>
-    <div id="score"></div>
-    <div id="suggestions"></div>
-
+    </div>
     <script>
-        // Función para calcular el puntaje y generar sugerencias
-        function calcularPuntajeYSugerencias() {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            var total = checkboxes.length;
-            var marcados = 0;
-
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    marcados++;
-                }
-            }
-
-            var porcentaje = (marcados / total) * 100;
-            var score = "Puntaje: " + porcentaje.toFixed(2) + "%";
-            var suggestions = "Sugerencias de mejora: ";
-
-            if (porcentaje >= 80) {
-                suggestions += "El prototipo tiene una alta usabilidad y experiencia de usuario. ¡Excelente trabajo!";
-            } else if (porcentaje >= 60) {
-                suggestions += "Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario.";
-            } else {
-                suggestions += "Es importante mejorar varios aspectos relacionados con la usabilidad y experiencia de usuario.";
-            }
-
-            document.getElementById('score').innerText = score;
-            document.getElementById('suggestions').innerText = suggestions;
+        // Redireccionar a la página de resultados al hacer clic en un botón o al completar el checklist
+        function redirectToResults() {
+            window.location.href = "results.html";
         }
-
-        // Calcular el puntaje y generar sugerencias al cargar la página
-        calcularPuntajeYSugerencias();
     </script>
+    <button onclick="redirectToResults()">Ver Resultados</button>
 </body>
 </html>
