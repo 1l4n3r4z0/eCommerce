@@ -9,15 +9,55 @@
     <h1>Resultados del UX Checklist</h1>
     <div id="results"></div>
 
+    <div id="improvements" style="display: none;">
+        <p id="improvement-message">Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario:</p>
+        <ul id="improvement-list">
+            <!-- Los elementos de la lista de mejoras se agregarán aquí dinámicamente -->
+        </ul>
+    </div>
+
+    <div id="success" style="display: none;">
+        <p>Se cumplen con todos los aspectos evaluados en materia de usabilidad y experiencia de usuario.</p>
+    </div>
+
     <script>
         function showResults() {
             var params = new URLSearchParams(window.location.search);
+            var totalItems = 3; // Número total de ítems en el checklist
             var score = 0;
             if (params.get('checklist_item_1') === 'SI') score++;
             if (params.get('checklist_item_2') === 'SI') score++;
             if (params.get('checklist_item_3') === 'SI') score++;
             // Agrega más condiciones según la cantidad de elementos en el checklist
-            document.getElementById('results').innerHTML = "<p>Puntaje: " + score + "</p>";
+            var percentage = (score / totalItems) * 100;
+            document.getElementById('results').innerHTML = "<p>Puntaje: " + percentage.toFixed(2) + "%</p>";
+
+            var message = ""; // Variable para almacenar el mensaje correspondiente
+            if (percentage === 0) {
+                message = "No cumple con ningún aspecto en materia de usabilidad y UX, debe considerar lo siguiente:";
+            } else if (percentage <= 50) {
+                message = "Existen varios aspectos que deben considerarse seriamente en materia de usabilidad y experiencia de usuario:";
+            } else if (percentage < 100) {
+                message = "Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario:";
+            } else {
+                message = "Cumple satisfactoriamente con todos los aspectos evaluados en materia de usabilidad y UX.";
+            }
+
+            // Mostrar el mensaje correspondiente
+            document.getElementById('improvement-message').textContent = message;
+
+            if (percentage < 100) {
+                document.getElementById('improvements').style.display = 'block';
+                var improvementList = document.getElementById('improvement-list');
+                improvementList.innerHTML = ""; // Limpiar la lista antes de agregar nuevos elementos
+
+                if (params.get('checklist_item_1') !== 'SI') improvementList.innerHTML += "<li>El diseño no es intuitivo</li>";
+                if (params.get('checklist_item_2') !== 'SI') improvementList.innerHTML += "<li>La navegación no es clara</li>";
+                if (params.get('checklist_item_3') !== 'SI') improvementList.innerHTML += "<li>La carga de la página no es rápida</li>";
+                // Agregar más elementos según sea necesario
+            } else {
+                document.getElementById('success').style.display = 'block';
+            }
         }
 
         window.onload = showResults;
