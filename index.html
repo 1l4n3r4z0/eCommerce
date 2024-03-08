@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uX Checklist</title>
+    <title>Checklist Interactivo</title>
     <style>
         /* Estilos CSS */
         .checklist-item {
@@ -23,10 +23,17 @@
         .bottom-space {
             margin-bottom: 40px;
         }
+        #score {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #suggestions {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <h2>uX Checklist</h2>
+    <h2>Checklist Interactivo</h2>
     <div class="checklist">
         <!-- Navegación -->
         <div class="category">Navegación</div>
@@ -91,6 +98,40 @@
             <label><input type="checkbox" id="compatibility2"> El prototipo carga rápidamente y sin problemas?</label>
         </div>
     </div>
-    <div class="bottom-space"></div>
+    <div id="score"></div>
+    <div id="suggestions"></div>
+
+    <script>
+        // Función para calcular el puntaje y generar sugerencias
+        function calcularPuntajeYSugerencias() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var total = checkboxes.length;
+            var marcados = 0;
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    marcados++;
+                }
+            }
+
+            var porcentaje = (marcados / total) * 100;
+            var score = "Puntaje: " + porcentaje.toFixed(2) + "%";
+            var suggestions = "Sugerencias de mejora: ";
+
+            if (porcentaje >= 80) {
+                suggestions += "El prototipo tiene una alta usabilidad y experiencia de usuario. ¡Excelente trabajo!";
+            } else if (porcentaje >= 60) {
+                suggestions += "Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario.";
+            } else {
+                suggestions += "Es importante mejorar varios aspectos relacionados con la usabilidad y experiencia de usuario.";
+            }
+
+            document.getElementById('score').innerText = score;
+            document.getElementById('suggestions').innerText = suggestions;
+        }
+
+        // Calcular el puntaje y generar sugerencias al cargar la página
+        window.onload = calcularPuntajeYSugerencias;
+    </script>
 </body>
 </html>
