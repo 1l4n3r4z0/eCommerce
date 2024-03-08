@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX Checklist</title>
+    <style>
+        #index-results {
+            display: none; /* Oculta el elemento */
+        }
+    </style>
 </head>
 <body>
     <h1>UX Checklist</h1>
@@ -17,7 +22,9 @@
         <input type="submit" value="Enviar">
     </form>
 
-    <div id="results"></div>
+    <div id="index-results">
+        <p>Puntaje: </p>
+    </div>
 
     <script>
         function showResults() {
@@ -27,7 +34,7 @@
             if (params.get('checklist_item_2') === 'SI') score++;
             if (params.get('checklist_item_3') === 'SI') score++;
             // Agrega más condiciones según la cantidad de elementos en el checklist
-            document.getElementById('results').innerHTML = "<p>Puntaje: " + score + "</p>";
+            document.getElementById('index-results').innerHTML = "<p>Puntaje: " + score + "</p>";
         }
 
         window.onload = showResults;
