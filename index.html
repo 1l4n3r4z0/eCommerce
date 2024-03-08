@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
 <body>
     <h2>Checklist Interactivo</h2>
     <div class="checklist">
+ <!-- Inicio del Checklist -->
  <div class="checklist">
         <!-- Navegación -->
         <div class="category">Navegación</div>
@@ -72,13 +73,23 @@
             <label><input type="checkbox" id="compatibility2"> El prototipo carga rápidamente y sin problemas?</label>
         </div>
     </div>
-    </div>
+    <!-- Fin del Checklist -->
+ <button onclick="redirectToResults()">Ver Resultados</button>
+
     <script>
-        // Redireccionar a la página de resultados al hacer clic en un botón o al completar el checklist
         function redirectToResults() {
-            window.location.href = "results.html";
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var selectedValues = [];
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    selectedValues.push(checkbox.id);
+                }
+            });
+
+            var queryParams = selectedValues.join("&");
+            window.location.href = "results.html?" + queryParams;
         }
     </script>
-    <button onclick="redirectToResults()">Ver Resultados</button>
 </body>
 </html>
