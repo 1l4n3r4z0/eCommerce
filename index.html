@@ -6,8 +6,8 @@
     <title>UX Checklist</title>
 </head>
 <body>
-    <h1>UX Checklist 2</h1>
-    <form action="results.php" method="post">
+    <h1>UX Checklist</h1>
+    <form action="results.html" method="get">
         <ol>
             <li><input type="checkbox" name="checklist_item_1" value="SI"> ¿El diseño es intuitivo?</li>
             <li><input type="checkbox" name="checklist_item_2" value="SI"> ¿La navegación es clara?</li>
@@ -16,5 +16,21 @@
         </ol>
         <input type="submit" value="Enviar">
     </form>
+
+    <div id="results"></div>
+
+    <script>
+        function showResults() {
+            var params = new URLSearchParams(window.location.search);
+            var score = 0;
+            if (params.get('checklist_item_1') === 'SI') score++;
+            if (params.get('checklist_item_2') === 'SI') score++;
+            if (params.get('checklist_item_3') === 'SI') score++;
+            // Agrega más condiciones según la cantidad de elementos en el checklist
+            document.getElementById('results').innerHTML = "<p>Puntaje: " + score + "</p>";
+        }
+
+        window.onload = showResults;
+    </script>
 </body>
 </html>
