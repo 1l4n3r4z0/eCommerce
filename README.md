@@ -1,6 +1,6 @@
 # UX Checklist (uxchklst) 
 
-Este proyecto académico se centra en la evaluación de la usabilidad y la experiencia de usuario (UX) de un prototipo a través de un checklist. El checklist utilizado cuenta con 14 ítems que abarcan diferentes aspectos del diseño y la interacción del prototipo.
+Este proyecto académico se centra en la evaluación de la usabilidad y la experiencia de usuario (UX) de un prototipo de eCommerce a través de un checklist. El checklist utilizado cuenta con 14 ítems que abarcan diferentes aspectos del diseño y la interacción del prototipo, con orientación a los negocios internacionales.
 
 ## Objetivo
 
@@ -14,11 +14,11 @@ El proyecto consta de dos páginas web:
 
 ## Uso
 
-Para utilizar el proyecto, sigue estos pasos:
-1. Abre el archivo `index.html` en tu navegador web.
-2. Completa el formulario evaluando cada ítem del checklist.
-3. Haz clic en el botón de enviar para procesar los resultados.
-4. Serás redirigido a la página `results.html`, donde se mostrarán los resultados de la evaluación.
+Para utilizar el proyecto, siga estos pasos:
+1. Abra el archivo `index.html` en su navegador web.
+2. Complete el formulario evaluando cada ítem del checklist.
+3. Haga clic en el botón de enviar para procesar los resultados.
+4. Será redirigido a la página `results.html`, donde se mostrarán los resultados de la evaluación.
 
 ## Resultados y Recomendaciones
 
@@ -29,12 +29,12 @@ Los resultados de la evaluación se presentan en la página `results.html` de la
 
 ## Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor sigue estos pasos:
-1. Realiza un fork del repositorio.
-2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y realiza commit de ellos (`git commit -am 'Agrega nueva funcionalidad'`).
-4. Realiza un push de tu rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+Las contribuciones son bienvenidas. Si desea contribuir a este proyecto, por favor siga estos pasos:
+1. Realice un fork del repositorio.
+2. Cree una rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realice tus cambios y realiza commit de ellos (`git commit -am 'Agrega nueva funcionalidad'`).
+4. Realice un push de su rama (`git push origin feature/nueva-funcionalidad`).
+5. Abra un Pull Request.
 
 ## Licencia
 
