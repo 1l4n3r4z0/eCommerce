@@ -57,21 +57,21 @@
 
             var message = ""; // Variable para almacenar el mensaje correspondiente
             if (percentage === 0) {
-                message = "No cumple con ningún aspecto en materia de usabilidad y UX, debe considerar lo siguiente:";
+                message = "😬 No cumple con ningún aspecto en materia de usabilidad y UX, debe considerar lo siguiente;";
                 document.getElementById('improvements').style.display = 'block';
-                document.getElementById('improvement-message').innerHTML = message;
+                document.getElementById('improvement-message').innerHTML = `<strong>Observación:</strong> ${message}`;
             } else if (percentage <= 50) {
-                message = "Existen varios aspectos que deben considerarse seriamente en materia de usabilidad y experiencia de usuario:";
+                message = "😐 Existen varios aspectos que aún deben considerarse en materia de usabilidad y experiencia de usuario;";
                 document.getElementById('improvements').style.display = 'block';
-                document.getElementById('improvement-message').innerHTML = message;
+                document.getElementById('improvement-message').innerHTML = `<strong>Observación:</strong> ${message}`;
             } else if (percentage < 100) {
-                message = "Hay algunos aspectos que pueden mejorarse en términos de usabilidad y experiencia de usuario:";
+                message = "🙂 Algunos aspectos podrían mejorarse en términos de usabilidad y experiencia de usuario;";
                 document.getElementById('improvements').style.display = 'block';
-                document.getElementById('improvement-message').innerHTML = message;
+                document.getElementById('improvement-message').innerHTML = `<strong>Observación:</strong> ${message}`;
             } else {
-                message = "Cumple satisfactoriamente con todos los aspectos evaluados en materia de usabilidad y UX.";
+                message = "😄 Cumple satisfactoriamente con todos los aspectos evaluados en materia de usabilidad y UX.";
                 document.getElementById('success').style.display = 'block';
-                document.getElementById('success').getElementsByTagName('p')[0].innerHTML = message;
+                document.getElementById('success').getElementsByTagName('p')[0].innerHTML = `<strong>Observación:</strong> ${message}`;;
             }
 
             if (percentage < 100) {
