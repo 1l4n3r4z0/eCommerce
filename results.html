@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados</title>
+    <title>Resultados UX</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <h1>📋 Resultados</h1>
+    <h1>📋 Resultados UX</h1>
 
     <!-- Mostrar datos del evaluador -->
     <div id="evaluator-data">
@@ -57,11 +57,11 @@
 
             var message = ""; // Variable para almacenar el mensaje correspondiente
             if (percentage === 0) {
-                message = "😬 No cumple con ningún aspecto en materia de usabilidad y UX, debe considerar lo siguiente;";
+                message = "😬 No cumple con ningún aspecto en materia de usabilidad y UX. Considerar lo siguiente;";
                 document.getElementById('improvements').style.display = 'block';
                 document.getElementById('improvement-message').innerHTML = `<strong>Observación:</strong> ${message}`;
             } else if (percentage <= 50) {
-                message = "😐 Existen varios aspectos que aún deben considerarse en materia de usabilidad y experiencia de usuario;";
+                message = "😐 Existen varios aspectos que aún deben considerarse en materia de usabilidad y UX;";
                 document.getElementById('improvements').style.display = 'block';
                 document.getElementById('improvement-message').innerHTML = `<strong>Observación:</strong> ${message}`;
             } else if (percentage < 100) {
@@ -82,46 +82,46 @@
                     if (params.get('checklist_item_' + i) !== 'SI') {
                         switch(i) {
                             case 1:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Podría mejorarse la facilidad para encontrar y acceder a las diferentes secciones del prototipo.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Secciones difíciles de encontrar y acceder.</li>";
                                 break;
                             case 2:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>La navegación no resulta del todo clara y directa.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Navegación poco clara y directa.</li>";
                                 break;
                             case 3:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Los colores y la tipografía empleados no son los más agradables y legibles.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Colores y tipografía incoherentes o ilegibles.</li>";
                                 break;
                             case 4:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>El diseño general se percibe un tanto desordenado y poco profesional.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Diseño desordenado y poco profesional.</li>";
                                 break;
                             case 5:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Completar las tareas principales del prototipo no resulta tan sencillo como sería ideal.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Dificultad para completar tareas principales.</li>";
                                 break;
                             case 6:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Algunos botones y enlaces podrían ser más claros y fáciles de entender.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Botones y enlaces poco claros.</li>";
                                 break;
                             case 7:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Ciertos elementos interactivos, como botones y menús, no parecen funcionar correctamente.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Elementos interactivos con fallos.</li>";
                                 break;
                             case 8:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>La interacción con el prototipo no resulta del todo intuitiva para el usuario.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Interacción poco intuitiva para el usuario.</li>";
                                 break;
                             case 9:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Podría mejorar la facilidad para visualizar y navegar los productos/servicios ofrecidos en el prototipo.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Visualización y navegación de productos/servicios deficiente.</li>";
                                 break;
                             case 10:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Acceder a la información relevante para la compra (precios, descripciones, etc.) podría ser más sencillo.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Información de compra (precios, descripciones, etc.) poco accesible.</li>";
                                 break;
                             case 11:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>El prototipo podría representar de manera más clara la propuesta de valor del negocio.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Propuesta de valor del negocio poco clara.</li>";
                                 break;
                             case 12:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Sería recomendable que el diseño del prototipo facilitara mejor la conversión y venta de productos/servicios.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Diseño no facilita conversión y ventas.</li>";
                                 break;
                             case 13:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Valdría la pena optimizar la visualización del  prototipo, ya que en algunos casos podría no mostrarse de manera óptima.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Visualización incorrecta en dispositivos y/o navegadores.</li>";
                                 break;
                             case 14:
-                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>El tiempo de carga del prototipo podría mejorarse para que sea más rápido y sin problemas.</li>";
+                                improvementList.innerHTML += "<li style='padding-bottom: 0.5em'>Tiempos de carga lentos y con problemas.</li>";
                                 break;
                             default:
                                 break;
