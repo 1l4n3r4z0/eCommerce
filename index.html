@@ -8,28 +8,43 @@
         #index-results {
             display: none; /* Oculta el elemento */
         }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input:placeholder-shown {
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-    <h1>UX Checklist</h1>
+    <h1>☑️ UX Checklist</h1>
     <form action="results.html" method="get">
+        <!-- <label for="nombre"><b>Nombre:</b></label> -->
+        <input type="text" id="nombre" name="nombre" placeholder="Digite su (s) Nombre (s) y Apellido (s)" size="80" required><br><br>
+        <!--  <label for="id"><b>No. ID:</b></label> -->
+        <input type="text" id="id" name="id" placeholder="Documento de Identificación" size="80" pattern="^[0-9]+$" title="Only Numbers 0-9" required><br><br>
+        <!--  <label for="edad"><b>Edad:</b></label> -->
+        <input type="text" id="edad" name="edad" placeholder="Digite su edad" size="80" maxlength="3" pattern="^[0-9]+$" title="Numbers 0-9, 3 digits Max." required><br><br>
+        <!--  <label for="profesion"><b>Ocupación:</b></label> -->
+        <input type="text" id="profesion" name="profesion" placeholder="Ocupación" size="80" required><br><br>
+    <div>Seleccione a continuación únicamente los aspectos que cumple el prototipo evaluado:</div>
         <ol>
-            <li><input type="checkbox" name="checklist_item_1" value="SI"> ¿Es fácil encontrar y acceder a las diferentes secciones del prototipo?</li>
-            <li><input type="checkbox" name="checklist_item_2" value="SI"> ¿La navegación es clara y directa?</li>
-            <li><input type="checkbox" name="checklist_item_3" value="SI"> ¿Los colores y la tipografía utilizados son agradables y legibles?</li>
-            <li><input type="checkbox" name="checklist_item_4" value="SI"> ¿El diseño general es ordenado y profesional?</li>
-            <li><input type="checkbox" name="checklist_item_5" value="SI"> ¿Se puede completar fácilmente las tareas principales del prototipo?</li>
-            <li><input type="checkbox" name="checklist_item_6" value="SI"> ¿Los botones y enlaces son claros y fáciles de entender?</li>
-            <li><input type="checkbox" name="checklist_item_7" value="SI"> ¿Los elementos interactivos, como botones y menús, funcionan correctamente?</li>
-            <li><input type="checkbox" name="checklist_item_8" value="SI"> ¿La interacción con el prototipo es intuitiva para el usuario?</li>
-            <li><input type="checkbox" name="checklist_item_9" value="SI"> ¿Los usuarios pueden proporcionar comentarios sobre su experiencia con el prototipo?</li>
-            <li><input type="checkbox" name="checklist_item_10" value="SI"> ¿Se han tenido en cuenta los comentarios de los usuarios para realizar mejoras en el diseño?</li>
-            <li><input type="checkbox" name="checklist_item_11" value="SI"> ¿El prototipo cumple con los objetivos y requisitos comerciales establecidos?</li>
-            <li><input type="checkbox" name="checklist_item_12" value="SI"> ¿Es claro cómo el prototipo puede beneficiar al negocio?</li>
-            <li><input type="checkbox" name="checklist_item_13" value="SI"> ¿El prototipo se visualiza correctamente en diferentes dispositivos y navegadores?</li>
-            <li><input type="checkbox" name="checklist_item_14" value="SI"> ¿El prototipo carga rápidamente y sin problemas?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_1" value="SI"> ¿Es fácil encontrar y acceder a las diferentes secciones del prototipo?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_2" value="SI"> ¿La navegación es clara y directa?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_3" value="SI"> ¿Los colores y la tipografía utilizados son agradables y legibles?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_4" value="SI"> ¿El diseño general es ordenado y profesional?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_5" value="SI"> ¿Se puede completar fácilmente las tareas principales del prototipo?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_6" value="SI"> ¿Los botones y enlaces son claros y fáciles de entender?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_7" value="SI"> ¿Los elementos interactivos, como botones y menús, funcionan correctamente?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_8" value="SI"> ¿La interacción con el prototipo es intuitiva para el usuario?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_9" value="SI"> ¿Los usuarios pueden proporcionar comentarios sobre su experiencia con el prototipo?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_10" value="SI"> ¿Se han tenido en cuenta los comentarios de los usuarios para realizar mejoras en el diseño?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_11" value="SI"> ¿El prototipo cumple con los objetivos y requisitos comerciales establecidos?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_12" value="SI"> ¿Es claro cómo el prototipo puede beneficiar al negocio?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_13" value="SI"> ¿El prototipo se visualiza correctamente en diferentes dispositivos y navegadores?</li>
+            <li style="padding-bottom: 0.5em"><input type="checkbox" name="checklist_item_14" value="SI"> ¿El prototipo carga rápidamente y sin problemas?</li>
         </ol>
-            <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar">
     </form>
 
     <div id="index-results">
